@@ -4,10 +4,11 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { PROJECTS } from "@consts";
+import { Project } from "@types"; // Assuming you have a Project type
 
 const projects = (await getCollection("projects"))
-  .filter((project) => !project.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  .filter((project: Project) => !project.data.draft)
+  .sort((a: Project, b: Project) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <Layout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
@@ -19,7 +20,7 @@ const projects = (await getCollection("projects"))
         </div>
         <ul class="animate not-prose flex flex-col gap-4">
           {
-            projects.map((project) => (
+            projects.map((project: Project) => (
               <li>
                 <ArrowCard entry={project} />
               </li>

@@ -1,0 +1,55 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+---
+
+<Layout title="About Me" description="Learn more about Tiankai Xie">
+  <Container>
+    <h1 class="font-semibold text-black dark:text-white">About Me</h1>
+    <article class="text space-y-4">
+      <p>
+        I'm a postdoctoral researcher in the 
+        <Link href="https://vader.lab.asu.edu/">VADER Lab</Link> 
+        at 
+        <Link href="https://www.asu.edu/">Arizona State University</Link>. 
+        My primary research interests are visualization and explainable AI. 
+        I am currently working on visualizing high-dimensional loss functions 
+        to enhance the transparency and reliability of machine learning models, 
+        with a particular focus on scientific machine learning applications 
+        (e.g. Physics-informed Neural Networks, Material Discovery, etc.)
+      </p>
+      <p>
+        My research integrates principles from visual analytics and AI 
+        to develop tools that allow researchers and practitioners to 
+        better understand the complex behaviors of models. During my Ph.D., 
+        I focused on 
+        <Link href="https://keep.lib.asu.edu/items/189385">
+          Explaining the Vulnerabilities of Machine Learning Models 
+          through Visual Analytics
+        </Link>, 
+        covering areas such as adversarial machine learning, ML fairness, 
+        and data robustness analysis. This work aimed to uncover and mitigate 
+        potential risks in AI systems, ensuring that they perform reliably 
+        and fairly across various applications. Currently, I am passionate 
+        about bridging the gap between advanced AI techniques and their 
+        practical applications, ensuring that models are not only powerful 
+        but also interpretable and trustworthy. Through my work, I aim to 
+        contribute to the broader field of AI by making it more accessible 
+        and reliable for scientific inquiry and real-world deployment.
+      </p>
+      <p>
+        I got my MS degree in 
+        <Link href="https://www.stevens.edu/school-engineering-science/departments/computer-science">
+          computer science
+        </Link> 
+        at 
+        <Link href="https://www.stevens.edu/">Stevens Institute of Technology</Link>, 
+        focusing on distributed systems, and I earned my BS in computer science 
+        at 
+        <Link href="http://bjfu.admissions.cn/">Beijing Forestry University</Link>.
+      </p>
+      <!-- Add more detailed content about yourself here -->
+    </article>
+  </Container>
+</Layout>
