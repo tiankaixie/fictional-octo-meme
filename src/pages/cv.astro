@@ -10,12 +10,12 @@ const { education, researchExperience, industryExperience, publications, reviewS
 <Layout title="CV" description="Curriculum Vitae">
   <Container>
 
-    <article class="prose dark:prose-dark grid grid-cols-1 md:grid-cols-[max-content_1fr] gap-x-4 gap-y-2">
+    <article class="prose dark:prose-dark md:grid  md:grid-cols-[max-content_1fr] gap-x-4 gap-y-2">
 
-      <div class="text-2xl font-semibold mt-2 col-start-2">{cv.data.name}</div>
-      <div class="text-sm col-start-2 text-gray-400">{cv.data.tagline}</div>
-      <div class="text-sm col-start-2">{cv.data.summary}</div>
-      <div class="flex flex-wrap gap-x-4 col-start-2 mt-2">
+      <div class="text-2xl font-semibold mt-2 md:col-start-2">{cv.data.name}</div>
+      <div class="text-sm md:col-start-2 text-gray-400">{cv.data.tagline}</div>
+      <div class="text-sm md:col-start-2">{cv.data.summary}</div>
+      <div class="flex flex-wrap gap-x-4 md:col-start-2 mt-2">
         {cv.data.links.map((link: { name: string, icon: string, text: string, url: string }) => (
           <div class="flex items-center space-x-2 mt-1">
             <i class={`${link.icon} `}></i>
@@ -29,16 +29,20 @@ const { education, researchExperience, industryExperience, publications, reviewS
       <div class="text-2xl font-semibold mt-2 col-start-2">Education</div>
       {education.map((edu: any) => (
         <>
-          <div class="flex text-xs flex-col text-right justify-start items-center pt-1.5">
+          <div class="text-xs md:flex md:flex-col md:text-right md:justify-start items-center pt-1.5 hidden">
             <div>{edu.endYear}</div>
             <div> | </div>
             <div>{edu.startYear}</div>
           </div>
           <div>
-          <div class="font-semibold">{edu.degree}</div>
-            <div class="text-sm col-start-2">{edu.institution}</div>
-            <div class="text-sm col-start-2 text-gray-400">{edu.description1}</div>
-            <div class="text-sm col-start-2 text-gray-400">{edu.description2}</div>
+            <div class="font-semibold">{edu.degree}</div>
+            <div class="text-sm md:hidden">
+              <div class="text-xs">{edu.startYear} - {edu.endYear}</div>
+            </div>
+
+            <div class="text-sm">{edu.institution}</div>
+            <div class="text-sm text-gray-400">{edu.description1}</div>
+            <div class="text-sm text-gray-400">{edu.description2}</div>
           </div>
         </>
       ))}
@@ -46,15 +50,19 @@ const { education, researchExperience, industryExperience, publications, reviewS
       <div class="text-2xl font-semibold mt-2 col-start-2">Research Experience</div>
       {researchExperience.map((exp: any) => (
         <>
-          <div class="flex text-xs flex-col text-right justify-start items-center pt-1.5">
+          <div class="text-xs md:flex md:flex-col md:text-right md:justify-start items-center pt-1.5 hidden">
             <div>{exp.endYear}</div>
             <div> | </div>
             <div>{exp.startYear}</div>
           </div>
           <div>
             <div class="font-semibold">{exp.position}</div>
-            <div class="text-sm col-start-2">{exp.company}</div>
-            <div class="text-sm col-start-2 text-gray-400">{exp.description}</div>
+            <div class="text-sm md:hidden">
+              <div class="text-xs">{exp.startYear} - {exp.endYear}</div>
+            </div>
+
+            <div class="text-sm">{exp.company}</div>
+            <div class="text-sm text-gray-400">{exp.description}</div>
           </div>
         </>
       ))}
@@ -62,15 +70,19 @@ const { education, researchExperience, industryExperience, publications, reviewS
       <div class="text-2xl font-semibold mt-2 col-start-2">Industry Experience</div>
       {industryExperience.map((exp: any) => (
         <>
-          <div class="flex text-xs flex-col text-right justify-start items-center pt-1.5">
+          <div class="text-xs md:flex md:flex-col md:text-right md:justify-start items-center pt-1.5 hidden">
             <div>{exp.endYear}</div>
             <div> | </div>
             <div>{exp.startYear}</div>
           </div>
           <div>
             <div class="font-semibold">{exp.position}</div>
-            <div class="text-sm col-start-2">{exp.company}</div>
-            <div class="text-sm col-start-2 text-gray-400">{exp.description}</div>
+            <div class="text-sm md:hidden">
+              <div class="text-xs">{exp.startYear} - {exp.endYear}</div>
+            </div>
+
+            <div class="text-sm">{exp.company}</div>
+            <div class="text-sm text-gray-400">{exp.description}</div>
           </div>
         </>
       ))}
@@ -78,11 +90,12 @@ const { education, researchExperience, industryExperience, publications, reviewS
       <div class="text-2xl font-semibold mt-2 col-start-2">Publications</div>
       {publications.map((pub: any) => (
         <>
-          <div class="flex flex-col text-right justify-start items-center pt-1.5">
+          <div class=" flex-col text-right justify-start items-center pt-1.5 hidden md:flex">
             <div class="text-xs">{pub.year}</div>
           </div>
           <div class="text-sm col-start-2">
             <div class="font-semibold">{pub.title}</div>
+            <div class="text-xs md:hidden">{pub.year}</div>
             <div class="text-xs italic">{pub.authors}</div>
             <div class="text-xs">{pub.journal}</div>
             <div class="text-xs">
@@ -127,7 +140,6 @@ const { education, researchExperience, industryExperience, publications, reviewS
           <div class="text-sm">{ref.affiliation}</div>
           <div class="text-sm"><a href={ref.link}>{ref.link}</a></div>
         </div>
-      ))}
-    </article>
+      ))}    </article>
   </Container>
 </Layout>
