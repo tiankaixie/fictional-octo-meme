@@ -41,8 +41,8 @@ researchExperience:
 industryExperience:
   - position: "Data Scientist Intern"
     company: "Epsilon Data Management, LLC., Chicago, IL"
-    startYear: "May 2017"
-    endYear: "Aug 2017"
+    startYear: "May 2021"
+    endYear: "Aug 2021"
     description: |
       Designed and implemented the algorithm to extract highlights from the aggregated audience data across 2500+ companies. Designed, implemented and integrated the Intelligent Audience Profile (IAP) visualization view driven by the designed highlighting algorithm into the DiME visual analytics platform.
   - position: "Co-founder"
